@@ -43,6 +43,6 @@
 
 ;; Ergoemacs setup. https://ergoemacs.github.io/
 (require 'ergoemacs-mode)
-(setq ergoemacs-theme nul) ;; Uses standard ergoemacs keyboard theme.
+(setq ergoemacs-theme nil) ;; Uses standard ergoemacs keyboard theme.
 (setq ergoemacs-keyboard-layout "us") ;; assumes QWERTY keyboard layout.
 (ergoemacs-mode 1)
