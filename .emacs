@@ -28,7 +28,7 @@
  '(initial-scratch-message nil)
  '(package-selected-packages
    (quote
-    (highlight-indent-guides undo-tree tabbar-ruler rainbow-delimiters doom-themes dracula-theme org monokai-pro-theme)))
+    (iflipb highlight-indent-guides undo-tree tabbar-ruler rainbow-delimiters doom-themes dracula-theme org monokai-pro-theme)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -87,3 +87,14 @@
           (tab-mark 9 [9655 9] [92 9]) ; tab
           )))
 
+
+;; Buffer cycling shorcuts
+(require 'iflipb)
+(global-set-key (kbd "<C-tab>") 'iflipb-next-buffer)
+  (global-set-key
+   (if (featurep 'xemacs) (kbd "<C-iso-left-tab>") (kbd "<C-S-iso-lefttab>"))
+   'iflipb-previous-buffer)
+
+;; Navigate over parantheses
+(global-set-key (kbd "<M-]>") 'forward-sexp)
+(global-set-key (kbd "<M-[>") 'backward-sexp)
